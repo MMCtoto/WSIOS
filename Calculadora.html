@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ejercicio Calculadora</title>
+    <script>
+        function ResultadOperacion() {
+            realizarOperacion(operacion.value);
+        }
+
+        function realizarOperacion(value){
+            let num1 = Number(n1.value);
+            let num2 = Number(n2.value);
+
+            var res = Number(value);
+
+            if (value == 0) {
+                res = sumar(num1, num2);
+            } else if (value == 1) {
+                res = restar(num1, num2);
+            } else if (value == 2) {
+                res = multiplicar(num1, num2);
+            } else if (value == 3) {
+                res = dividir(num1, num2);
+            }
+            return res;
+        }
+
+        function sumar(numero1, numero2){
+            resultado.value = numero1 + numero2;
+        }
+        function restar(numero1, numero2){
+            resultado.value = numero1 - numero2;
+        }
+        function multiplicar(numero1, numero2){
+            resultado.value = numero1 * numero2;
+        }
+        function dividir(numero1, numero2){
+            resultado.value = numero1 / numero2;
+        }
+
+    </script>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <form name="fomulario"> 
+            Introduce dos números y selecciona la operación:
+            <br> 
+            <br>
+            <br>
+            Número 1:<input type="text" id="n1" value="0" />
+            <br />
+            Número 2: <input type="text" id="n2" value="0">
+            <br />
+            <select id="operacion"> 
+                <option value="0">Suma 
+                <option value="1">Resta 
+                <option value="2">Multiplicación
+                <option value="3">División
+                     
+            </select> 
+            Resultado:<input type="text" id="resultado" />
+            <input type=button value="Calcular" onclick="ResultadOperacion();"> 
+        </form>
+        
+    </div>
+</body>
+
+</html>
